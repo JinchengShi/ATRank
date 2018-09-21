@@ -1,5 +1,6 @@
 *.txt
 *.pkl
 *.json
+.idea/
 __pycache__
 save_path
