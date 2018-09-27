@@ -1,4 +1,7 @@
 import os
+os.environ["OMP_NUM_THREADS"] = "4"
+os.environ["NUMEXPR_NUM_THREADS"] = "4"
+os.environ["OMP_NUM_THREADS"] = "4"
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 # 新建配置对象
 tf_cfg = tf.ConfigProto()
