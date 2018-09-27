@@ -1,6 +1,13 @@
 import os
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+# 新建配置对象
+tf_cfg = tf.ConfigProto()
+# 设置显存占用按模型规模增长
+tf_cfg.gpu_options.allow_growth=True
+# 设置最大显存占用比例
+tf_cfg.gpu_options.per_process_gpu_memory_fraction = 0.3
+sess = tf.Session(config=tf_cfg)
+#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import time
 import json
 import pickle
